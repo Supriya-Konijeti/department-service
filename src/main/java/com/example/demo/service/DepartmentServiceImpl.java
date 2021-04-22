@@ -21,6 +21,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentDao.findById(id);
     }
     @Override
+    public void deleteDepartment(String id) {
+        departmentDao.deleteById(id);
+    }
+
+    @Override
 
     public Department createDepartment(Department department) {
         return departmentDao.save(department);

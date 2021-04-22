@@ -40,5 +40,11 @@ public class DepartmentController {
     {
         return ResponseEntity.ok(departmentService.findDepartment(id));
     }
+    @DeleteMapping("/departments/{departmentId}")
+    public ResponseEntity<List<Department>> deleteDepartment(@PathVariable("id") String id) {
+        departmentService.deleteDepartment(id);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
+
 }
 
